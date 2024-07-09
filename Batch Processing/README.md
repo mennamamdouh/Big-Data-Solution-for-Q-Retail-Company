@@ -19,7 +19,7 @@ Data batches arrive hour-by-hour and need to be ingested as is in a *raw layer*,
 
 Ingestion layer moves the data from data source to the first layer which is the *Bronze Layer*.
 
-[Python Code](Batch Processing\ingestion-layer-code.py) is used to perform this task, and it's divided as follows:
+[Python Code](ingestion-layer-code.py) is used to perform this task, and it's divided as follows:
 1. Moving files to staging area
 2. Partitioning files by day and hour
     a. Make a directory to represent the current date on HDFS under the Bronze directory
