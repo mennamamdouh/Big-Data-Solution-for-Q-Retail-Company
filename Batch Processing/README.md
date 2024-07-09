@@ -15,7 +15,7 @@ Data batches arrive hour-by-hour and need to be ingested as is in a *raw layer*,
 
 ---
 
-## Ingestion Layer
+## Ingestion Layer | Bronze Layer
 
 Ingestion layer moves the data from data source to the first layer which is the *Bronze Layer*.
 
