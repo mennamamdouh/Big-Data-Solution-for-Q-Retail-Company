@@ -30,5 +30,5 @@ This step also generates 2 types of logs:
     - Logs some information about each pre-processed file such as it's columns and their data types and whether it has duplicates or not.
     <div align="center">
         <img src="images/data-report.png" alt="Image" width=1000>
-        <p><em>Snapshot of Data Logs</em></p>
+        <p><em>Snapshot of Data Report</em></p>
     </div>
