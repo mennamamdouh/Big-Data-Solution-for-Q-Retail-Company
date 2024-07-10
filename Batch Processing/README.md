@@ -68,3 +68,40 @@ This step also generates 2 types of logs:
         <img src="images/data-report.png" alt="Image" width=1000>
         <p><em>Snapshot of Data Report</em></p>
     </div>
+
+---
+
+## Scheduling Technique
+
+Mainly, we've `3` jobs to run in the batch pipeline, `ingestion`, `cleaning`, and `transformation`. They need to get executed on each batch sequentially. So, a [bash script](scheduling-script.sh) is used to perform this task, then it gets scheduled as a `cron-job`.
+
+As mentioned, the script consists of the `3` jobs which run in order, job by job. First, the `ingestion-layer` code runs through the `python3` command.
+```shell
+/usr/bin/python3 ingestion-layer-code.py >> cron-logs/logfile-${today_date}.log 2>&1
+```
+
+Second, the `cleaning-layer` notebook runs through the `papermill` command through `Pyspark2` kernel.
+```shell
+/home/itversity/.local/bin/papermill cleaning-layer.ipynb cleaning-layer.ipynb -k Pyspark2 >> cron-logs/logfile-${today_date}.log 2>&1
+```
+
+Finally, the `transformation-layer` notebook runs through the same command `papermill` and through the same kernel `Pyspark2`.
+```shell
+/home/itversity/.local/bin/papermill transformation-layer.ipynb transformation-layer.ipynb -k Pyspark2 >> cron-logs/logfile-${today_date}.log 2>&1
+```
+
+After executing each job, the script checks if it's been done successfully or not and logs the time and log messages to a log file related to every day the jobs run.
+
+It also supports a logging functionality to trace the behavior of the jobs while execution and check for any errors if something fails.
+
+At the end, the script is scheduled as a `cron-job` using `crontab -e` command.
+```shell
+5 * * * * bash scheduling-script.sh
+```
+
+<div align="center">
+    <img src="images/scheduling-log.png" alt="Image" width=1000>
+    <p><em>Snapshot of Scheduling Log File</em></p>
+</div>
+
+---
