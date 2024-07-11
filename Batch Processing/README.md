@@ -71,6 +71,10 @@ This step also generates 2 types of logs:
 
 ---
 
+## Transformation Layer | Gold Layer
+
+---
+
 ## Scheduling Technique
 
 Mainly, we've `3` jobs to run in the batch pipeline, `ingestion`, `cleaning`, and `transformation`. They need to get executed on each batch sequentially. So, a [bash script](scheduling-script.sh) is used to perform this task, then it gets scheduled as a `cron-job`.
