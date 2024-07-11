@@ -2,7 +2,7 @@
 
 ## About our Customer
 
-Q Company, specializing in retail, operates branches across various regions and utilizes an E-commerce platform. It needs to build a data pipeline to manage its day-to-day operations. The pipeline manages the data sources, data ingestion, transformation and processing, and serving layers using big data tools such as Apache Spark and Apache Hive.
+__Q Company__, specializing in retail, operates branches across various regions and utilizes an E-commerce platform. It needs to build a data pipeline to manage its day-to-day operations. The pipeline manages the data sources, data ingestion, transformation and processing, and serving layers using big data tools such as *Apache Spark* and *Apache Hive*.
 
 ---
 
@@ -39,6 +39,7 @@ Repo consists of `4` directories:
 2. `Stream Processing`: A directory to hold the codes of streaming part.
 3. `DWH Modeling`: A directory to hold the model of our DWH.
 4. `Project Files`: The whole project files that are ready to be run on the docker image that is mentioned in the [itversity/data-engineering-spark](https://github.com/itversity/data-engineering-spark) repository.
+
     > To run the project, follow the steps in the [How to run ?](#how-to-run-) section.
 5. `images`: A directory that holds the images used in the documentation.
 
