@@ -32,9 +32,9 @@ There're other tools used, `Python` is used in ingesting data into our system, a
 
 ---
 
-## Repo Structure
+## Repository Structure
 
-Repo consists of `4` directories:
+This repository consists of `5` directories:
 1. `Batch Processing`: A directory to hold the codes of batch part.
 2. `Stream Processing`: A directory to hold the codes of streaming part.
 3. `DWH Modeling`: A directory to hold the model of our DWH.
@@ -46,3 +46,5 @@ Repo consists of `4` directories:
 ---
 
 ## How to run ?
+
+---
