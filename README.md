@@ -34,6 +34,14 @@ There're other tools used, `Python` is used in ingesting data into our system, a
 
 ## Repo Structure
 
+Repo consists of `4` directories:
+1. `Batch Processing`: A directory to hold the codes of batch part.
+2. `Stream Processing`: A directory to hold the codes of streaming part.
+3. `DWH Modeling`: A directory to hold the model of our DWH.
+4. `Project Files`: The whole project files that are ready to be run on the docker image that is mentioned in the [itversity/data-engineering-spark](https://github.com/itversity/data-engineering-spark) repository.
+    > To run the project, follow the steps in the [How to run ?](#how-to-run-) section.
+5. `images`: A directory that holds the images used in the documentation.
+
 ---
 
 ## How to run ?
