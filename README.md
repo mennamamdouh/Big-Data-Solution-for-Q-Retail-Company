@@ -47,4 +47,30 @@ This repository consists of `5` directories:
 
 ## How to run ?
 
+Our project is run on top of a docker container based on the [itversity/data-engineering-spark](https://github.com/itversity/data-engineering-spark) docker image. So, if you want to run the project, please follow the following steps:
+
+1. Set up docker environment on your machine, pull the docker image and run a container from it.
+
+2. Put all the files located in [Project Files](Project%20Files/) directory in `itversity-material/ITI_Material/Spark_Final_Project` located in the container.
+
+3. Prepare HDFS:
+
+    From the terminal of the container create the following directories under `/user/itversity/q-retail-company` directory:
+
+    1. `bronze`, `silver`, and `gold`
+    2. `streaming/data` and `streaming/checkpoint`
+
+    <div align="center">
+        <img src="images/hdfs-directories.png" alt="Image" width=1000>
+        <p><em>Preparing HDFS Environment</em></p>
+    </div>
+
+4. Open your terminal and run `crontab -e` then type the following line and choose whatever time to run the cron job.
+
+    ```bash
+    30 * * * * cd /home/itversity/itversity-material/ITI_Material/Spark_Final_Project && bash scheduling-script.sh >> log.log 2>&1
+    ```
+
+5. Wait for it, explore the logs, and enjoy!
+
 ---
