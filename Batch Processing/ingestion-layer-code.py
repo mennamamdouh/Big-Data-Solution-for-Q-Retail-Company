@@ -36,7 +36,7 @@ def move_to_staging(current_group_path, current_group_name):
     try:
         return shutil.copytree(current_group_path, staging_group)
     except:
-        return null
+        return None
 
 def partition_data():
     try:
